@@ -1,0 +1,217 @@
+<!--
+
+index.html
+This is the index HTML file for my Feedback A1 app
+
+Revision History
+    Matt Corsetti, 2018.02.23: Created
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>MC Feedback A1</title>
+        <!--jQuery-->
+        <script src="js/lib/jquery-2.1.4.js"></script>
+        <!--jQuery mobile-->
+         <script src="js/lib/jquery.mobile-1.4.5.js"></script>
+        <!--jQuery mobile css-->
+        <link rel="stylesheet" type="text/css" href="css/lib/jquery.mobile-1.4.5.css">
+        <style>
+            img {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        </style>
+    </head>
+    <body>
+    <!-- page 1 Home Page -->
+        <div data-role="page" id="mcHomePage">
+
+            <header data-role="header" data-theme="b">
+                <h1>MC Feedback A1</h1>
+            </header>
+
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#mcHomePage" data-icon="home" class="ui-btn-active ui-state-persist">Home</a></li>
+                        <li><a href="#mcAddFeedbackPage"data-icon="plus">Add</a></li>
+                        <li><a href="#mcViewFeedbackPage" data-icon="grid">Reviews</a></li>
+                        <li><a href="#mcSettingsPage" data-icon="gear">Settings</a></li>
+                    </ul>
+                </div>
+
+            <section data-role="content">
+
+                <h1>Matt Corsetti's Feedback A1 App</h1>
+                <p>Welcome to Matt Corsetti's Feedback A1 app. A prototype
+                designed for my mobile programming class' first assignment.
+                This is the first iteration of the app to keep track of different
+                basketball arenas you visit along with your reviews.</p>
+
+                <img src="img/MC-icon.png" alt="My icon" style="width: 40%;">
+
+                <p>Please feel free to contact me if you have any suggestions!</p>
+
+                <!-- Contact Buttons -->
+                <button type="button" data-iconpos="left" data-icon="plus">
+                    <a href="tel: 519-748-5220" style="color: black; text-decoration: none">Call: 519.748.5220</a></button>
+
+                <button type="button" data-iconpos="left" data-icon="plus">
+                    <a href="mailto:Mcorsetti0469@conestogac.on.ca" style="color: black; text-decoration: none">Mcorsetti0469@conestogac.on.ca</a></button>
+
+                <p>Website:</p>
+                <button type="button" data-iconpos="left" data-icon="plus">
+                    <a href="http://www.conestogac.on.ca/" style="color: black; text-decoration: none">Conestoga College</a></button>
+
+            </section>
+
+            <footer data-role="footer" data-theme="b">
+                <h4>&copy; 2018 Matt Corsetti</h4>
+            </footer>
+
+        </div>
+
+    <!-- page 2 Add Feedback Page-->
+        <div data-role="page" id="mcAddFeedbackPage">
+
+            <header data-role="header" data-theme="b">
+                <h1>Add Feedback</h1>
+            </header>
+
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#mcHomePage" data-icon="home">Home</a></li>
+                        <li><a href="#mcAddFeedbackPage" data-icon="plus" class="ui-btn-active ui-state-persist">Add</a></li>
+                        <li><a href="#mcViewFeedbackPage" data-icon="grid">Reviews</a></li>
+                        <li><a href="mcSettingsPage" data-icon="gear">Settings</a></li>
+                    </ul>
+                </div>
+
+            <section data-role="content">
+                <form id="mcAddForm">
+                    <label for="mcBusinessName">Business Name:</label>
+                    <input type="text" id="mcBusinessName" name="mcBuisinessName" data-clear-btn="true">
+                    <label for="mcReviewerEmail">Reviewer Email:</label>
+                    <input type="email" id="mcReviewerEmail" name="mcReviewerEmail" data-clear-btn="true">
+                    <label for="mcReviewerComments">Reviewer Comments:</label>
+                    <textarea id="mcReviewerComments" name="mcReviewerComments"></textarea>
+                    <label for="mcOverallRating">Overall Ratings (1-100):</label>
+                    <input type="number" id="mcOverallRating" name="mcOverallRating" data-clear-btn="true">
+                    <button type="submit" id="mcSaveBtn" name="mcSaveBtn"
+                            style="width: 75px; height: 50px; background-color: #3388cc; color: white; text-shadow: none;">Save</button>
+                </form>
+            </section>
+
+            <footer data-role="footer" style="background-color: black; color: white; text-shadow: none; position: absolute; bottom: 0; width: 100%;">
+                <h4>&copy; 2018 Matt Corsetti</h4>
+            </footer>
+        </div>
+
+
+    <!-- page 3 View Feedback Page -->
+        <div data-role="page" id="mcViewFeedbackPage">
+            <header data-role="header" data-theme="b">
+                <h1>List of Reviews</h1>
+            </header>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#mcHomePage" data-icon="home">Home</a></li>
+                        <li><a href="#mcAddFeedbackPage" data-icon="plus">Add</a></li>
+                        <li><a href="#mcViewFeedbackPage" data-icon="grid"class="ui-btn-active ui-state-persist">Reviews</a></li>
+                        <li><a href="#mcSettingsPage" data-icon="gear">Settings</a></li>
+                    </ul>
+                </div>
+            <section data-role="content">
+                <ul data-role="listview" class="ui-listview-inset" id="mcFeedbackList">
+                    <li>
+                        <a href="#mcEditFeedbackPage">Business Name: Air Canada Centre
+                            <p>Reviewer Email: mc@arenareview.com</p>
+                            <p>Comments: Fun Atmosphere!</p>
+                            <p>Overall Rating: 90%</p></a>
+                    </li>
+
+                    <li>
+                        <a href="#mcEditFeedbackPage">Business Name: Rogers Arena
+                            <p>Reviewer Email: mc@arenareview.com</p>
+                            <p>Comments: Exciting Time!</p>
+                            <p>Overall Rating: 85%</p></a>
+                    </li>
+
+                </ul>
+            </section>
+
+            <footer data-role="footer" style="background-color: black; color: white; text-shadow: none; position: fixed; bottom: 0; width: 100%;">
+                <h4>&copy; 2018 Matt Corsetti</h4>
+            </footer>
+        </div>
+    <!-- page 4 Edit Feedback Page -->
+        <div data-role="page" id="mcEditFeedbackPage">
+            <header data-role="header" data-theme="b">
+                <h1>Modify Feedback</h1>
+            </header>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#mcHomePage" data-icon="home">Home</a></li>
+                        <li><a href="#mcAddFeedbackPage" data-icon="plus">Add</a></li>
+                        <li><a href="#mcViewFeedbackPage" data-icon="grid"class="ui-btn-active ui-state-persist">Reviews</a></li>
+                        <li><a href="#mcSettingsPage" data-icon="gear">Settings</a></li>
+                    </ul>
+                </div>
+                <section data-role="content">
+                    <form id="mcEditForm">
+                        <label for="mcEditBusinessName">Business Name:</label>
+                        <input type="text" id="mcEditBusinessName" name="mcEditBusinessName" value="Air Canada Centre">
+                        <label for="mcEditReviewerEmail">Reviewer Email:</label>
+                        <input type="email" id="mcEditReviewerEmail" name="mcEditReviewerEmail" value="mc@arenareviewer.com">
+                        <label for="mcEditReviewerComments">Reviewer Comments</label>
+                        <textarea id="mcEditReviewerComments" name="mcEditReviewerComments">Fun Atmosphere!</textarea>
+                        <label for="mcEditOverallRating">Overall Ratings (1-100):</label>
+                        <input type="number" id="mcEditOverallRating" name="mcEditOverallRating" value="90">
+                        <button type="reset" style="background-color: yellow; width: 100px; height: 50px;
+                        float: left; margin-right: 0px;" id="mcCancelBtn">Cancel</button>
+                        <button type="submit" style="background-color: black; width: 100px; height: 50px; color: white;
+                        float: left; margin-right: 0px" id="mcDeleteBtn">Delete</button>
+                        <button type="submit" style="background-color: #3388cc; width: 100px; height: 50px; color: white;
+                        float: left; margin-right: 0px" id="mcUpdateBtn">Update</button>
+                    </form>
+                </section>
+
+                <footer data-role="footer" style="background-color: black; color: white; text-shadow: none; position: fixed; bottom: 0; width: 100%;">
+                    <h4>&copy; 2018 Matt Corsetti</h4>
+                </footer>
+        </div>
+
+    <!-- page 5 Settings Page-->
+        <div data-role="page" id="mcSettingsPage">
+            <header data-role="header" data-theme="b">
+                <h1>Settings</h1>
+            </header>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#mcHomePage" data-icon="home">Home</a></li>
+                        <li><a href="#mcAddFeedbackPage" data-icon="plus">Add</a></li>
+                        <li><a href="#mcViewFeedbackPage" data-icon="grid">Reviews</a></li>
+                        <li><a href="#mcSettingsPage" data-icon="gear" class="ui-btn-active ui-state-persist">Settings</a></li>
+                    </ul>
+                </div>
+            <section data-role="content">
+                <form id="mcSettings">
+                    <label for="mcDefaultEmail">Default reviewer Email:</label>
+                    <input type="email" id="mcDefaultEmail" name="mcDefaultEmail">
+                    <button type="submit" id="mcSaveDefaultBtn" style="background-color: #3388cc; color:white; text-shadow: none; ">Save Defaults</button>
+                    <button type="reset" id="mcClearDefaultBtn" data-theme="b">Clear Database</button>
+                </form>
+            </section>
+
+            <footer data-role="footer" style="background-color: black; color: white; text-shadow: none; position: fixed; bottom: 0; width: 100%;">
+                <h4>&copy; 2018 Matt Corsetti</h4>
+            </footer>
+        </div>
+
+    </body>
+</html>
